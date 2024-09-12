@@ -17,13 +17,18 @@ connectDB();
 // Middleware
 
 
-app.use(
-  cors({
-    origin: [process.env.frontend_url],
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: process.env.frontend_url, // Ensure this matches exactly
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // Enable sending cookies
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow custom headers
+  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests for complex methods (like POST, PUT, DELETE)
+app.options("*", cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
