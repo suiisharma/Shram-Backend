@@ -49,7 +49,7 @@ This is the backend server for the Memory Master: Emoji Challenge game. It handl
    Create a `.env` file in the root directory and add:
    ```
    PORT=3000
-   MONGODB_URI=mongodb://localhost:27017/memory_master
+   MONGO_URI=mongodb://localhost:27017/memory_master
    JWT_SECRET=your_jwt_secret_key
    NODE_ENV=development
    ```
