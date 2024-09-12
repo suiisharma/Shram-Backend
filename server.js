@@ -17,7 +17,7 @@ connectDB();
 // Middleware
 
 app.use( cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173","https://shram-frontend.vercel.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   }));
