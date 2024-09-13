@@ -11,9 +11,9 @@ const sendTokenResponse = (user, statusCode, res) => {
         .status(statusCode)
         .cookie('token', token, {
             httpOnly: true,
-            expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-            sameSite: 'Lax',
-            secure: process.env.NODE_ENV === 'production' ? true : false,
+        maxage: 1000 * 60 * 15,
+        sameSite: process.env.node_env === "development" ? "lax" : "none",
+        secure: process.env.node_env === "development" ? false : true
         })
         .json({ success: true, user: { username: user.username, scores: user.scores, highestscore: user.highestscore} });
 };
