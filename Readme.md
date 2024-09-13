@@ -52,6 +52,7 @@ This is the backend server for the Memory Master: Emoji Challenge game. It handl
    MONGO_URI=mongodb://localhost:27017/memory_master
    JWT_SECRET=your_jwt_secret_key
    NODE_ENV=development
+   frontend_url=your_frontend_url
    ```
    Replace `your_jwt_secret_key` with a secure random string.
 
