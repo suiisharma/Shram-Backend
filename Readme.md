@@ -66,15 +66,14 @@ The server will start running on `http://localhost:3000`.
 ## 📚 API Documentation
 
 ### Authentication
-
 - POST `/api/auth/register`: Register a new user
 - POST `/api/auth/login`: Log in a user
+- POST `/api/auth/logout`: Log out the current user
+- GET `/api/auth/me`: Get current user information
 
-### Scores
-
-- POST `/api/score`: Submit a new score
-- GET `/api/scores/leaderboard`: Get the top 10 players in global leaderboard 
-
+### Game
+- POST `/api/game/score`: Submit a new game score
+- GET `/api/game/leaderboard`: Get the top players in the global leaderboard
 
 ## 🔒 Security
 
