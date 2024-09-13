@@ -12,8 +12,8 @@ const sendTokenResponse = (user, statusCode, res) => {
         .cookie('token', token, {
             httpOnly: true,
         maxage: 1000 * 60 * 15,
-        sameSite: process.env.node_env === "development" ? "lax" : "none",
-        secure: process.env.node_env === "development" ? false : true
+        sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",
+        secure: process.env.NODE_ENV === "development" ? false : true
         })
         .json({ success: true, user: { username: user.username, scores: user.scores, highestscore: user.highestscore} });
 };
@@ -66,8 +66,8 @@ export const logout = (req,res) => {
         .cookie('token', '', {
             httpOnly: true,
             expires: new Date(Date.now()),
-            sameSite: process.env.node_env === "development" ? "lax" : "none",
-            secure: process.env.node_env === "development" ? false : true,
+             sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",
+        secure: process.env.NODE_ENV === "development" ? false : true
         })
         .json({ success: true, msg: 'User logged out' });
 };
